@@ -1,4 +1,6 @@
 # ai-maze-python
+<img src = "pathfinder_result.png"/>
+
 ai_pathfinder.py: 
   Solves a given maze using a* algorithm and uses pygame to visualize the solving
   process. At the end prints the grid with the solution found and all the cells explored.
