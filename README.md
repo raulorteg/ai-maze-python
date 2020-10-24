@@ -8,6 +8,7 @@ This project consists of two parts: An automatic maze generator and an automatic
 DFS to solve the maze blindly. It's inefficient as most of the times runs through the whole maze to find the solution. The interesting pathfinder is _ai-pathfinder_, which uses A* algorithm to find a solution. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution). After solving the maze the solution is then saved into a txt or csv file. Folder _mazes-solutions_ contain all the solutions found using A* for the mazes in folder _mazes_.
 
 <img src = "pathfinder_result.png"/>
+<img src = "generation.png"/>
 
 
 ### Summary of contents in the scripts:
