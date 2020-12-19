@@ -9,13 +9,13 @@ DFS to solve the maze blindly. It's inefficient as most of the times runs throug
 
 <div class="row">
   <div class="column" padding: "5px">
-    <img src="maze_generator.gif" alt="maze generation gif" height="300" style="padding: 10px;">
+    <img src="maze_generator.gif" alt="maze generation gif" height="250" style="padding: 10px;">
   </div>
   <div class="column">
-    <img src="maze_solver_18.gif" alt="maze solver example 18" height="300" style="padding: 10px; ">
+    <img src="maze_solver_18.gif" alt="maze solver example 18" height="250" style="padding: 10px; ">
   </div>
   <div class="column">
-    <img src="maze_solver_19.gif" alt="maze solver example 19" height="300" style="padding: 10px;">
+    <img src="maze_solver_19.gif" alt="maze solver example 19" height="250" style="padding: 10px;">
   </div>
 </div>
 <div>
