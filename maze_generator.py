@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Sep  9 00:01:40 2020
-
-@author: Usuario
+@author: Raul Ortega Ochoa
 """
 import pygame
+import csv
 from time import sleep
 from helper_maze_generator import generate_step
 
@@ -38,10 +38,10 @@ for row in range(num_rows):
 pygame.init()
 
 # congiguration of the window
-WINDOW_SIZE = [800, 800]
+WINDOW_SIZE = [330, 330]
 screen = pygame.display.set_mode(WINDOW_SIZE)
 # screen title
-pygame.display.set_caption("Generating Laberynth")
+pygame.display.set_caption("Generating Maze ...")
  
 
 # loop until done
@@ -68,9 +68,10 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
             
-        # wait for user to press any key to start    
+        # wait for user to press RETURN key to start    
         elif event.type == pygame.KEYDOWN:
-            run = True
+            if event.key==pygame.K_RETURN:
+                run = True
     
     
     screen.fill(grey) # fill background in grey
@@ -137,3 +138,8 @@ while not close:
         if event.type == pygame.KEYDOWN:
             close = True
 pygame.quit() # so that it doesnt "hang" on exit
+
+# # export maze to .csv file
+# with open("mazes/maze.csv", "w", newline="") as f:
+#     writer = csv.writer(f)
+#     writer.writerows(grid)

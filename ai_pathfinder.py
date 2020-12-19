@@ -17,7 +17,7 @@ class Node: # define a Node class
 # # ask user for path to maze
 # address = input("Path to maze: ")
 
-address = "mazes/maze3.csv"
+address = "mazes/maze18.csv"
 grid = load_maze(address)
 
 # define goal and start
@@ -53,7 +53,7 @@ margin = 1 # sets margin between grid locations
 pygame.init()
 
 # congiguration of the window
-WINDOW_SIZE = [600, 600]
+WINDOW_SIZE = [330, 330]
 screen = pygame.display.set_mode(WINDOW_SIZE)
 # screen title
 pygame.display.set_caption(f"Pathfinder. {address}")
@@ -72,9 +72,10 @@ while not interrupt:
         if event.type == pygame.QUIT:
             interrupt = True
             
-        # wait for user to press any key to start    
+        # wait for user to press RETURN key to start    
         elif event.type == pygame.KEYDOWN:
-            run = True
+            if event.key==pygame.K_RETURN:
+                run = True
     
     screen.fill(grey) # fill background in grey
     
@@ -138,10 +139,10 @@ while not interrupt:
         # pick a node from the frontier
         current_node = pick_node_from_list(frontier)
         grid, frontier, seen, current_node = generate_step(grid, frontier, seen, current_node)
-        print(f"AI is at {current_node.position}")
+
         if current_node.position == goal: # if ai is at goal then finish
             last_iter = True
-            ### TODO: follow the parents back to the origin
+            ### follow the parents back to the origin
             while current_node.parent != None:
                 x, y = current_node.position
                 grid[x][y] = 5
