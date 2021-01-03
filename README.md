@@ -1,13 +1,15 @@
 # Automatic Maze generator and Automatic maze solver
 
+Overview
+========
 This project consists of two parts: An automatic maze generator and an automatic Maze solver. 
 
-1. The maze generator uses DFS (Depth first search) algorithm to create a maze from a blanck grid. The generated maze can be then saved into a txt or csv file. In order to increase the speed of the generation of mazes its better not to visualize them with Pygame. The folder _Mazes_ contains 20 mazes generated with this method.
+1. The maze generator uses DFS (Depth first search) algorithm to create a maze from a blanck grid. The generated maze can be then saved into a txt or csv file. In order to increase the speed of the generation of mazes its better not to visualize them with Pygame. Folder _Mazes_ contains 20 mazes generated with this method.
 
 2. There are two automatic Maze solvers implemented so that I could better compare the performance of differet algorithms for solving mazes. The first one _dumb-pathfinder_ uses 
-DFS to solve the maze blindly. It's inefficient as most of the times runs through the whole maze to find the solution. The interesting pathfinder is _ai-pathfinder_, which uses A* algorithm to find a solution. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution). After solving the maze the solution is then saved into a txt or csv file. Folder _mazes-solutions_ contain all the solutions found using A* for the mazes in folder _mazes_.
+DFS to solve the maze blindly. It's inefficient as most of the times runs through the whole maze to find the solution. The interesting pathfinder is _ai-pathfinder_, which uses A* algorithm. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution). After solving the maze the solution is then saved into a txt or csv file. Folder _mazes-solutions_ contain all the solutions found using A* for the mazes in folder _mazes_.
 
-<p float="left">
+<p float="center">
   <img src="files/maze_generator.gif" alt="maze generation gif" height="250" />
   <img src="files/maze_solver_18.gif" alt="maze solver example 18" height="250"/>
   <img src="files/maze_solver_19.gif" alt="maze solver example 19" height="250"/>
@@ -16,8 +18,8 @@ DFS to solve the maze blindly. It's inefficient as most of the times runs throug
   <p>Figure: From left to right, maze generation, maze solving example #1 (easy), maze solving example #2 (difficult)</p>
 </div>
 
-
-### Summary of contents in the scripts:
+Contents
+========
 **ai_pathfinder.py**: 
   Solves a given maze using a* algorithm and uses pygame to visualize the solving
   process. At the end prints the grid with the solution found and all the cells explored.
