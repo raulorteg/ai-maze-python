@@ -7,17 +7,11 @@ This project consists of two parts: An automatic maze generator and an automatic
 2. There are two automatic Maze solvers implemented so that I could better compare the performance of differet algorithms for solving mazes. The first one _dumb-pathfinder_ uses 
 DFS to solve the maze blindly. It's inefficient as most of the times runs through the whole maze to find the solution. The interesting pathfinder is _ai-pathfinder_, which uses A* algorithm to find a solution. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution). After solving the maze the solution is then saved into a txt or csv file. Folder _mazes-solutions_ contain all the solutions found using A* for the mazes in folder _mazes_.
 
-<div class="row">
-  <div class="column" padding: "5px">
-    <img src="maze_generator.gif" alt="maze generation gif" height="250" style="padding: 10px;">
-  </div>
-  <div class="column">
-    <img src="maze_solver_18.gif" alt="maze solver example 18" height="250" style="padding: 10px; ">
-  </div>
-  <div class="column">
-    <img src="maze_solver_19.gif" alt="maze solver example 19" height="250" style="padding: 10px;">
-  </div>
-</div>
+<p float="left">
+  <img src="files/maze_generator.gif" alt="maze generation gif" height="250" />
+  <img src="files/maze_solver_18.gif" alt="maze solver example 18" height="250"/>
+  <img src="files/maze_solver_19.gif" alt="maze solver example 19" height="250"/>
+</p>
 <div>
   <p>Figure: From left to right, maze generation, maze solving example #1 (easy), maze solving example #2 (difficult)</p>
 </div>
