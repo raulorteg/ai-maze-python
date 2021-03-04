@@ -1,7 +1,6 @@
 # Automatic Maze generator and Automatic maze solver
 
-Overview
-========
+## About
 This project consists of two parts: An automatic maze generator and an automatic Maze solver. 
 
 1. The maze generator uses DFS (Depth first search) algorithm to create a maze from a blanck grid. The generated maze can be then saved into a txt or csv file. In order to increase the speed of the generation of mazes its better not to visualize them with Pygame. Folder _Mazes_ contains 20 mazes generated with this method.
@@ -18,8 +17,21 @@ DFS to solve the maze blindly. It's inefficient as most of the times runs throug
   <p>Figure: From left to right, maze generation, maze solving example #1 (easy), maze solving example #2 (difficult)</p>
 </div>
 
-Contents
-========
+* info on A* search algorithm: https://en.wikipedia.org/wiki/A*_search_algorithm
+* info on DFS algorithm: https://en.wikipedia.org/wiki/Depth-first_search
+
+## Requirements
+* Pygame
+* Numpy
+
+## Usage
+* Install requirements `pip install -r requirements.txt`
+* To generate a new maze run `python maze_generator.py`
+* To solve an exisiting maze using A* run `python ai_pathfinder.py`
+* To solve an exisiting maze using DFS run `python dumb_pathfinder.py`
+* The program waits for user to press `enter/return key` to start execution.
+
+## Structure
 **ai_pathfinder.py**: 
   Solves a given maze using a* algorithm and uses pygame to visualize the solving
   process. At the end prints the grid with the solution found and all the cells explored.
