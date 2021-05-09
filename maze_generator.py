@@ -162,7 +162,7 @@ if __name__ == "__main__":
     num_columns = num_rows
     grid = np.zeros((num_rows, num_columns))
 
-    if args.display == 0:
+    if args.display == 1:
       # initialize pygame
       pygame.init()
 
