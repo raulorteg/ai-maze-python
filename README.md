@@ -3,10 +3,15 @@
 ## About
 This project consists of two parts: An automatic maze generator and an automatic Maze solver. 
 
-1. The maze generator uses DFS (Depth first search) algorithm to create a maze from a blanck grid. The generated maze can be then saved into a txt or csv file. In order to increase the speed of the generation of mazes its better not to visualize them with Pygame. Folder _Mazes_ contains 20 mazes generated with this method.
+1. The maze generator uses DFS (Depth first search) to create a maze from a blanck grid. The generated maze is into a csv file. 
 
-2. There are two automatic Maze solvers implemented so that I could better compare the performance of differet algorithms for solving mazes. The first one _dumb-pathfinder_ uses 
-DFS to solve the maze blindly. It's inefficient as most of the times runs through the whole maze to find the solution. The interesting pathfinder is _ai-pathfinder_, which uses A* algorithm. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution). After solving the maze the solution is then saved into a txt or csv file. Folder _mazes-solutions_ contain all the solutions found using A* for the mazes in folder _mazes_.
+In order to increase the speed its better not to visualize them with Pygame (--display=0). Folder _Mazes_ contains 30 mazes generated with this method.
+
+2. Two automatic Maze solvers for comparison.
+* `dfs_pathfinder` uses DFS to solve the maze blindly. It's inefficient (most of the times runs through the whole maze to find the solution).
+* `aStar_pathfinder` uses A* algorithm. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution)
+
+After solving the maze the solution is then saved into a csv file. Folder `mazes_solutions` contain all the solutions found using A* & DFS for the mazes in folder _mazes_.
 
 <p float="center">
   <img src="files/maze_generator.gif" alt="maze generation gif" height="250" />
@@ -21,42 +26,27 @@ DFS to solve the maze blindly. It's inefficient as most of the times runs throug
 * info on DFS algorithm: https://en.wikipedia.org/wiki/Depth-first_search
 
 ## Requirements
-* Pygame
-* Numpy
+* Install requirements `pip install -r requirements.txt`
 
 ## Usage
-* Install requirements `pip install -r requirements.txt`
 * To generate a new maze run `python maze_generator.py --display=1 --num_mazes=100`
-(Options: display 1 (true, default) 0 (False), num_mazes=100 (default 1))  
-* To solve an exisiting maze using A* run `python ai_pathfinder.py`
-* To solve an exisiting maze using DFS run `python dumb_pathfinder.py`
-* The program waits for user to press `enter/return key` to start execution.
+* To solve an exisiting maze using A* run `python aStar_pathfinder.py --maze_file=maze_1.csv --display=1`
+* To solve an exisiting maze using DFS run `python dfs_pathfinder.py --maze_file=maze_1.csv --display=1`
+
+By default display is set to True (1) and number of mazes is set to 1. To run visualization press enter when the window loads.
+
+## Options
+* display: 1 (True, per default), 0 (False)
+* num_mazes: int (1 default)
+* maze_file: filename of csv maze in /mazes. (default maze_1.csv)
 
 ## Structure
-**ai_pathfinder.py**: 
-  Solves a given maze using a* algorithm and uses pygame to visualize the solving
-  process. At the end prints the grid with the solution found and all the cells explored.
-
-**helper_ai_pathfinder.py**: 
-  helper functions used in ai_pathfinder.py
-  
-**dumb_pathfinder.py**:
-  Solves a given maze using Depth-first search (DFS) algorithm and uses Pygame to visualize
-  the solving proccess. Not really eficient and many times it explores all the maze before finding the solution.
-
-**helper_pathfinder.py**:
-  helper functions used in dumb_pathfinder.py
-
-**maze_generator.py**:
-  Generates a maze using Depth-first search (DFS) algorithm and uses Pygame to
-  visualize the proccess of generating the maze.
-
-**helper_maze_generator.py**:
-  helper functions used in maze_generator.py
-  
-**mazes folder**:
-  contains 20 mazes in csv format generated using maze_generator.py
-
-**mazes_solutions**:
-  contains the solutions to the 20 mazes in mazes folder. The solutions are the ones
-  given by ai_pathfinder.py, which uses the a* algorithm.
+```
+--- /mazes
+      |__ ...
+--- / mazes_solutions
+      |__ ...
+--- aStar_pathfinder.py
+--- dfs_pathfinder.py
+--- maze_generator.py
+```
