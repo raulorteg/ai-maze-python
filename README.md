@@ -26,7 +26,8 @@ DFS to solve the maze blindly. It's inefficient as most of the times runs throug
 
 ## Usage
 * Install requirements `pip install -r requirements.txt`
-* To generate a new maze run `python maze_generator.py`
+* To generate a new maze run `python maze_generator.py --display=1 --num_mazes=100`
+(Options: display 1 (true, default) 0 (False), num_mazes=100 (default 1))  
 * To solve an exisiting maze using A* run `python ai_pathfinder.py`
 * To solve an exisiting maze using DFS run `python dumb_pathfinder.py`
 * The program waits for user to press `enter/return key` to start execution.
