@@ -8,10 +8,13 @@ This project consists of two parts: An automatic maze generator and an automatic
 In order to increase the speed its better not to visualize them with Pygame (--display=0). Folder _Mazes_ contains 30 mazes generated with this method.
 
 2. Two automatic Maze solvers for comparison.
-* `dfs_pathfinder` uses DFS to solve the maze blindly. It's inefficient (most of the times runs through the whole maze to find the solution).
-* `aStar_pathfinder` uses A* algorithm. Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution)
+* `dfs_pathfinder` uses DFS (Depth First Search) to solve the maze blindly. It's inefficient (most of the times runs through the whole maze to find the solution).
+* `bfs_pathfinder` uses DFS (Breadth First Search) to solve the maze blindly. It's inefficient (most of the times runs through the whole maze to find the solution).
+* `aStar_pathfinder` uses A* algorithm (its an informed algorithm that takes decissions based on a cost funtion).
 
-After solving the maze the solution is then saved into a csv file. Folder `mazes_solutions` contain all the solutions found using A* & DFS for the mazes in folder _mazes_.
+Using Pygame one can visualize the process of solving the maze. When the solution is found, the script backtracks the path to show the solution found in magenta, as seen in the image below (NOTE: Blue colored cells are explored cells that are not part of the solution)
+
+After solving the maze the solution is then saved into a csv file. Folder `mazes_solutions` contain all the solutions found using A*, DFS, BFS for the mazes in folder _mazes_.
 
 <p float="center">
   <img src="files/maze_generator.gif" alt="maze generation gif" height="250" />
@@ -24,6 +27,7 @@ After solving the maze the solution is then saved into a csv file. Folder `mazes
 
 * info on A* search algorithm: https://en.wikipedia.org/wiki/A*_search_algorithm
 * info on DFS algorithm: https://en.wikipedia.org/wiki/Depth-first_search
+* info on BFS algorithm: https://en.wikipedia.org/wiki/Breadth-first_search
 
 ## Requirements
 * Install requirements `pip install -r requirements.txt`
@@ -32,6 +36,7 @@ After solving the maze the solution is then saved into a csv file. Folder `mazes
 * To generate a new maze run `python maze_generator.py --display=1 --num_mazes=100`
 * To solve an exisiting maze using A* run `python aStar_pathfinder.py --maze_file=maze_1.csv --display=1`
 * To solve an exisiting maze using DFS run `python dfs_pathfinder.py --maze_file=maze_1.csv --display=1`
+* To solve an exisiting maze using BFS run `python bfs_pathfinder.py --maze_file=maze_1.csv --display=1`
 
 By default display is set to True (1) and number of mazes is set to 1. To run visualization press enter when the window loads.
 
@@ -47,6 +52,8 @@ By default display is set to True (1) and number of mazes is set to 1. To run vi
 --- / mazes_solutions
       |__ ...
 --- aStar_pathfinder.py
+--- helper_aStar.py
 --- dfs_pathfinder.py
+--- bfs_pathfinder.py
 --- maze_generator.py
 ```
