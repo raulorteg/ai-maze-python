@@ -107,7 +107,7 @@ if __name__ == "__main__":
   start_t0 = time.time()
 
   # parsing user input
-  # example: python dfs_generator.py --display=True --maze_file=maze_1.csv
+  # example: python bfs_pathfinder.py --display=True --maze_file=maze_1.csv
   parser = argparse.ArgumentParser()
   parser.add_argument("--display", help="Display generating process 0: False, 1:True", default=1, type=int)
   parser.add_argument("--maze_file", help="filename (csv) of the maze to load.", default="maze_1.csv", type=str)
