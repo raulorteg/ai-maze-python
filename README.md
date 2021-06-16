@@ -7,7 +7,7 @@ This project consists of two parts: An automatic maze generator and an automatic
 
 In order to increase the speed its better not to visualize them with Pygame (--display=0). Folder _Mazes_ contains 30 mazes generated with this method.
 
-2. Two automatic Maze solvers for comparison.
+2. Three automatic Maze solvers for comparison.
 * `dfs_pathfinder` uses DFS (Depth First Search) to solve the maze blindly. It's inefficient (most of the times runs through the whole maze to find the solution).
 * `bfs_pathfinder` uses DFS (Breadth First Search) to solve the maze blindly. It's inefficient (most of the times runs through the whole maze to find the solution).
 * `aStar_pathfinder` uses A* algorithm (its an informed algorithm that takes decissions based on a cost funtion).
@@ -18,11 +18,17 @@ After solving the maze the solution is then saved into a csv file. Folder `mazes
 
 <p float="center">
   <img src="files/maze_generator.gif" alt="maze generation gif" height="250" />
-  <img src="files/maze_solver_18.gif" alt="maze solver example 18" height="250"/>
-  <img src="files/maze_solver_19.gif" alt="maze solver example 19" height="250"/>
 </p>
 <div>
-  <p>Figure: From left to right, maze generation, maze solving example #1 (easy), maze solving example #2 (difficult)</p>
+  <p>Figure: Maze generation</p>
+</div>
+<p float="center">
+  <img src="files/aStar.gif" alt="solver aStar" height="250"/>
+  <img src="files/bfs.gif" alt="solver bfs" height="250"/>
+  <img src="files/dfs.gif" alt="solver dfs" height="250"/>
+</p>
+<div>
+  <p>Figure: From left to right, maze solvers: A*, BFS, DFS solving the same maze</p>
 </div>
 
 * info on A* search algorithm: https://en.wikipedia.org/wiki/A*_search_algorithm
@@ -57,3 +63,6 @@ By default display is set to True (1) and number of mazes is set to 1. To run vi
 --- bfs_pathfinder.py
 --- maze_generator.py
 ```
+
+## TODOs:
+* :construction: A second maze generator using cellular automata
