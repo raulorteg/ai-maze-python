@@ -63,6 +63,3 @@ By default display is set to True (1) and number of mazes is set to 1. To run vi
 --- bfs_pathfinder.py
 --- maze_generator.py
 ```
-
-## TODOs:
-* :construction: A second maze generator using cellular automata
